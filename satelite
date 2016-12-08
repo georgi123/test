@@ -1,0 +1,48 @@
+mv /etc/yum.repos.d/* /root/
+subscription-manager --force  register --org INTEROUTE --activationkey RHEL6-x86_64-IRT
+subscription-manager attach --auto
+subscription-manager repos --enable rhel-6-server-satellite-tools-6.1-rpms
+yum install katello-agent -y
+katello-package-upload
+RHEL6 on AMS satellite
+wget https://10.130.100.99/pub/katello-ca-consumer-latest.noarch.rpm --no-check-certificate -P /tmp
+echo 10.130.100.99 inth1-ams-rhs.hosted.internal |sudo tee -a /etc/hosts
+rpm -Uvh /tmp/katello-ca-consumer-latest.noarch.rpm
+mv /etc/sysconfig/rhn/systemid /root/
+mv /etc/yum.repos.d/* /root/
+subscription-manager --force  register --org INTEROUTE --activationkey RHEL6-x86_64-IRT
+subscription-manager attach --auto
+subscription-manager repos --enable rhel-6-server-satellite-tools-6.1-rpms
+yum install katello-agent -y
+katello-package-upload
+
+
+
+
+
+
+
+
+eto
+route
+rpm -ivh katello-ca-consumer-latest.noarch.rpm
+subscription-manager --force register --org="INTEROUTE" --activationkey="RHEL7-x86_64-PROD" --baseurl https://inth8-vas-sat-1.vas.inth8/pulp/repos
+ yum update subscription-manager
+ yum install katello-agent
+ y
+ subscription-manager status
+ subscription-manager repos --list
+ yum repolist
+ yum update
+eto
+
+curl -O http://inth8-vas-sat-1.vas.inth8/pub/katello-ca-consumer-latest.noarch.rpm
+rpm -ivh katello-ca-consumer-latest.noarch.rpm
+subscription-manager --force register --org="INTEROUTE" --activationkey="RHEL7-x86_64-PROD" --baseurl https://inth8-vas-sat-1.vas.inth8/pulp/repos
+ yum update subscription-manager
+ yum install katello-agent
+ y
+ subscription-manager status
+ subscription-manager repos --list
+ yum repolist
+ yum update
