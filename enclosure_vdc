@@ -1,0 +1,20 @@
+ 
+Nodes	IP Enclosure 0	IP Enclosure 1	IP Enclosure 2	IP Enclosure 3	IP Enclosure 4
+ Amsterdam 2 (ESX)    	10.130.50.59	10.130.50.86	10.130.50.140	10.130.50.170	10.130.50.200
+ 
+
+Nodes	IP Enclosure 0	IP Enclosure 1	IP Enclosure 2	IP Enclosure 3	IP Enclosure 4
+ Amsterdam 2 (ESX)    	10.130.50.59	10.130.50.86	10.130.50.140	10.130.50.170	10.130.50.200  VDCAdmin / amskoo2VDC! amskooVDC!
+ Berlin (ESX)         	10.120.76.6	  10.120.76.36	10.120.76.58	10.120.76.84	10.120.76.110
+ Frankfurt (ESX)      	10.154.0.251	10.154.0.237	10.154.0.223	 	 
+ Geneva 2 (ESX)       	10.121.91.252	10.121.91.238	 	 	 
+ Geneva-Rolex (ESX)   	10.121.91.196	10.121.91.182	 	 	 
+ Geneva-TGF (ESX)     	10.121.78.252	10.121.78.238	 	 	 
+ London 2 (ESX)       	10.132.50.6	  10.132.50.36	10.132.50.66	10.132.50.96	 
+ Madrid (ESX)         	10.125.8.251	10.125.8.237	 	 mad-lezVDC! madlezVDC!	 
+ Milan (ESX)          	10.119.0.6	  10.119.0.36	 	 	 
+ Paris (ESX)          	10.122.76.6	  10.122.76.36	10.122.76.56	10.122.3.209	 
+ Slough (ESX)         	10.148.92.6 	10.148.92.36	 	 	 
+ Zurich (ESX)         	10.152.4.252	10.152.4.238	 	 	 
+ Instambul (ESX)        10.182.0.252	10.182.0.238	 	 	 
+ Stockholm (ESX)	      10.147.0.251	10.147.0.237	 	 
