@@ -1,0 +1,575 @@
+On Netapps
+vfiler status
+vfiler context ANAT0-vfiler01
+df -h /vol/ANAT0_vol_atem4/
+lun resize /vol/ANAT0_vol_atem4/lun_atem4 +300g
+
+On Linux
+echo "- - -" > /sys/class/scsi_host/host0/scan
+echo "- - -" > /sys/class/scsi_host/host1/scan
+echo "- - -" > /sys/class/scsi_host/host2/scan
+echo "- - -" > /sys/class/scsi_host/host3/scan
+echo "- - -" > /sys/class/scsi_host/host4/scan
+echo "- - -" > /sys/class/scsi_host/host5/scan
+echo 1 > /sys/block/sdb/device/rescan
+
+partprobe -v /dev/sdb
+partx -v -a /dev/sdb
+pvcreate /dev/sdb3
+vgextend <vgname> /dev/sdxcfdisk 
+lvextend -l +100%FREE
+resize2fs /dev/mapper
+485  mysql -A
+  486  mysql -u root -e"SHOW SLAVE STATUS\G" | grep "Seconds_Behind_Master"
+  487  vi /etc/hsots
+  488  vi /etc/hosts
+  489  vi /usr/openv/netbackup/bp.conf
+  490  netstat -nr
+  491  telnet parbup01b.mgt.hosted.internal 1556
+  492  vi /usr/openv/netbackup/bp.conf
+  493  netstat -nr
+  494  df -h
+  495  ls /usr/openv/netbackup/
+  496  cat /usr/openv/netbackup/exclude_list
+  497  df -h .
+  498  rm -f /home/support/Nebtackup\ Client\ 7.6.0.3\ RedHat2.6.18.zip
+  499  tar -xzf /home/support/NB_CLNT_7.6.0.3-bundle-RH.tgz
+  500  df -h .
+  501  ls
+  502  cd NB_CLNT_7.6.0.3-bundle-RH/
+  503  ls
+  504  ./client_config
+  505  cd ..
+  506  ls -l
+  507  df -h
+  508  ls -lh /home/support/
+  509  pwd
+  510  pvdisplay
+  511  df -h
+  512  exit
+  513  mysql -A
+  514  vi /etc/my.cnf
+  515  mysql -A
+  516  /etc/init.d/mysqld stop
+  517  ps -ef | grep mysql
+  518  tail /var/log/messages
+  519  ps -ef | grep mysql
+  520  tail /home/logs/mysql/atem4_dw.log
+  521  top -d 1
+  522  ps -ef
+  523  ps -ef | grep mysql
+  524  mysql -A
+  525  ps -ef | grep mysql
+  526  uptime
+  527  ps -ef | grep mysql
+  528  ps -ef
+  529  ps -ef | grep mysql
+  530  /etc/init.d/mysqld start
+  531  mysql -A
+  532  ls /usr/local/bin/
+  533  exit
+  534  yum history list
+  535  yum check-update
+  536  ls /home/support/
+  537  ls /root/
+  538  ls /usr/local/bin/
+  539  exit
+  540  clear
+  541  yum update
+  542  reboot
+  543  yumupdate
+  544  yum update
+  545  exit
+  546  yum install update
+  547  yum update
+  548  yum update
+  549  ls /usr/local/bin/
+  550  ls /home/
+  551  ls /home/exports/
+  552  ls /home/exports/anat0-1bo03/
+  553  ls /home/exports/scripts/
+  554  ls /home/exports/scripts/SecuredCLI/
+  555  ls /home/exports/scripts/ticket409224/
+  556  cd exit
+  557  exit
+  558  df -h
+  559  cd /mnt/new_archive
+  560  ls
+  561  cd ARCHIVE
+  562  ls
+  563  cd ARCHIVE1/
+  564  ls
+  565  cd ..
+  566  ls
+  567  ls -alih
+  568  du -smh .snapshot/
+  569  exit
+  570  df -h
+  571  ps axf
+  572  exit
+  573  vi /etc/logrotate.conf
+  574  cd /home/exports/atem4_dw/
+  575  tar -tvf dw_orange-20160126.tgz | grep location
+  576  ls
+  577  cd ..
+  578  ls
+  579  mkdir RESTAURATION_FICHIERS
+  580  cd RESTAURATION_FICHIERS/
+  581  tar -xvf ../atem4_dw/dw_orange-20160126.tgz ./location_translation.*
+  582  yum update
+  583  reboot
+  584  yum clean all
+  585  yum list update
+  586  yum install update -- skip-broken
+  587  yum update
+  588  yum update -- skip-broken
+  589  yum update
+  590  yum update --skip-broken
+  591  yum list update
+  592  cd /etc/yum
+  593  cd /etc/yum ls
+  594  cd /etc/yum/ ls
+  595  ls
+  596  cd..
+  597  cd
+  598  cd /etc/
+  599  ls
+  600  cd yum.repos.d/
+  601  ls
+  602  grep -r 'HPtools' *
+  603  cat redhat.repo |grep HP
+  604  cat interoute.repo |grep HP
+  605  cat rhel-source.repo |grep HP
+  606  vi hptools.repo
+  607  mv hptools.repo /etc/yum.repos.d/__hptools.repo
+  608  yum update
+  609  ls
+  610  mv __hptools.repo /etc/yum.repos.d/hptools.repo
+  611  hostname
+  612  subscription-manager unsubscribe
+  613  yum --exclude=hptools* update
+  614  vi hptools.repo
+  615  yum update
+  616  vi hptools.repo
+  617  yum update
+  618  cd /usr/local/bin/
+  619  ls
+  620  cd /etc/
+  621  more my.cnf
+  622  more my.cnf | grep -i bind
+  623  exit
+  624  more /etc/snmp/snmpd.conf
+  625  more /opt/Interoute/bin/checkMysqlSlave
+  626  more /opt/Interoute/bin/checkMysqlSlaveIo
+  627  more /opt/Interoute/bin/time_behind_master
+  628  more /opt/Interoute/bin/checkMysqlThread
+  629  exit
+  630  cd /opt/Interoute/bin
+  631  ls -ltr
+  632  vi checkMysqlSlave
+  633  cd /etc/snmp/
+  634  ls
+  635  more snmpd.conf
+  636  cd /etc/default/
+  637  ls
+  638  cd /etc/snmp/
+  639  ls
+  640  more snmptrapd.conf
+  641  ls -ltr
+  642  snmpwalk -c pargar01 -v2c  ANAT1-SLAVE-DB02 nsExtendOutput1
+  643  ps -elf | grep snmp
+  644  cd /var/log/
+  645  ls
+  646  find . -name *snmp*
+  647  more ./hp-snmp-agents
+  648  cd ./hp-snmp-agents
+  649  ls
+  650  ls -ltr
+  651  cd ..
+  652  ls -ltr
+  653  vi messages
+  654  cd /etc/snmp/
+  655  ls
+  656  more snmpd.conf
+  657  cd /etc/rc.d/
+  658  ls
+  659  find . -name snmp
+  660  find . -name snmp*
+  661  cd ./init.d/
+  662  ls
+  663  more snmpd
+  664  service snmpd status
+  665  pwd
+  666  snmpwalk -c pargar01 -v2c FROM0-1SQL05 nsExtendOutput1
+  667  cd /etc/snmp/
+  668  ls
+  669  cd /opt/Interoute/bin
+  670  ls -ltr
+  671  more mysqld
+  672  ls -ltr
+  673  cd ..
+  674  ls  l-tr
+  675  ls -ltr
+  676  find . -type f -exec grezp -l "mysqld" {} +
+  677  find . -type f -exec grep -l "mysqld" {} +
+  678  more /etc/snmp/snmpd.conf
+  679  exit
+  680  cd /opt/Interoute/bin/
+  681  ls
+  682  vi time_behind_master
+  683  exit
+  684  mysql -u supervision -p0nly4Inter0ute -h `hostname` -e "show slave status\G"
+  685  exit
+  686  cd /opt/Interoute/bin/
+  687  ls
+  688  cp time_behind_master time_behind_master_ori
+  689  exit
+  690  cd /opt/Interoute/bin/
+  691  LS
+  692  ls
+  693  exit
+  694  /bin/sh
+  695  exit
+  696  cd /opt/Interoute/bin/
+  697  ls
+  698  ./time_behind_master
+  699  vi time_behind_master
+  700  vi /etc/snmp/snmpd.conf
+  701  /bin/bash
+  702  vi /etc/snmp/snmpd.conf
+  703  service snmpd restart
+  704  vi /etc/snmp/snmpd.conf
+  705  vi /opt/Interoute/bin/
+  706  vi /opt/Interoute/bin/time_behind_master
+  707  vi /etc/snmp/snmpd.conf
+  708  vi /opt/Interoute/bin/time_behind_master
+  709  exit
+  710  vi /opt/Interoute/bin/time_behind_master
+  711  exit
+  712  yum -y install logwatch
+  713  vi /etc/snmp/snmpd.conf
+  714  exit
+  715  mysql
+  716  exit
+  717  ps axf
+  718  mysql
+  719  exit
+  720  uptme
+  721  uptime
+  722  top -d 1
+  723  ps -ef
+  724  free
+  725  top -d 1
+  726  cat /proc/cpuinfo
+  727  yum update
+  728  reboot
+  729  top
+  730  yum clean all
+  731  ps axf
+  732  /etc/init.d/snmpd restart
+  733  exit
+  734  vi /etc/snmp/snmpd.conf
+  735  exit
+  736  ps axf
+  737  exit
+  738  ps -ef |grep ntp
+  739  date
+  740  mysql -A
+  741  vim /usr/openv/netbackup/exclude_list
+  742  cat /usr/openv/netbackup/exclude_list
+  743  exit
+  744  mouny
+  745  mount
+  746  exit
+  747  mysql -A
+  748  yum update
+  749  mysql -A
+  750  yum update
+  751  mysql -A
+  752  yum check-update
+  753  rpm -qa | grep mysql
+  754  yum check-update | grep mysql
+  755  exit
+  756  yum check-update
+  757  vi /etc/yum.repos.d/redhat.repo
+  758  yum install hpdiags
+  759  ps axf
+  760  exirt
+  761  exit
+  762  mysql -A
+  763  ps -ef | grep mysql
+  764  top -d 21
+  765  top -d 1
+  766  lsof -p 12936
+  767  lsof -p 12936 | grep tmp
+  768  top -d 1
+  769  lsof -p 12936
+  770  lsof -np 12936
+  771  top -d 1
+  772  strace -p 12936
+  773  top -d 1
+  774  strace -p 12936
+  775  ps -ef |grep mysql
+  776  tail -f /home/logs/mysql/atem4_dw.log
+  777  top -d 1
+  778  yum update
+  779  reboot
+  780  ps -ef
+  781  tail -f /home/logs/mysql/atem4_dw.log
+  782  tp -d 1
+  783  top -d 1
+  784  tail -f /home/logs/mysql/atem4_dw.log
+  785  ps -ef |grep mysql
+  786  /etc/init.d/mysqld start
+  787  ps -ef |grep mysql
+  788  tail -f /home/logs/mysql/atem4_dw.log
+  789  mysql -A
+  790  tail -f /home/logs/mysql/atem4_dw.log
+  791  mysql -A
+  792  tail -f /home/logs/mysql/atem4_dw.log
+  793  mysql -A
+  794  ps -ef | grep mysql
+  795  tail /home/logs/mysql/atem4_dw.log
+  796  tail -f /home/logs/mysql/atem4_dw.log
+  797  tail -100 /home/logs/mysql/atem4_dw.log
+  798  tail -f /home/logs/mysql/atem4_dw.log
+  799  mysql -A
+  800  tail -f /home/logs/mysql/atem4_dw.log
+  801  mysql -A
+  802  tail -f /home/logs/mysql/atem4_dw.log
+  803  mysql -A
+  804  tail -f /home/logs/mysql/atem4_dw.log
+  805  ls -laih /home/databases/atem4_dw/tmp/SQL_LOAD-2-1-305029.data
+  806  tail -f /home/logs/mysql/atem4_dw.log
+  807  top -d 1
+  808  tail -f /home/logs/mysql/atem4_dw.log
+  809  top -d 1
+  810  tail -f /home/logs/mysql/atem4_dw.log
+  811  ls -lai /home/databases/atem4_dw/tmp/SQL_LOAD-2-1-305029.data
+  812  ls -lai /home/databases/atem4_dw/tmp/
+  813  ls -lai /home/databases/atem4_dw/tmp/SQL_LOAD-2-1-305029.data
+  814  tail -f /home/logs/mysql/atem4_dw.log
+  815  mysql -A
+  816  /etc/init.d/mysqld stop
+  817  top -d 1
+  818  tail -f /home/logs/mysql/atem4_dw.log
+  819  mysql -A
+  820  exit
+  821  multipath -v2
+  822  df -h
+  823  cat /etc/fstab
+  824  df -h
+  825  vgdisplay
+  826  vgdisplay vgAtem4-atem4vol
+  827  vgdisplay /dev/mapper/vgAtem4-atem4vol
+  828  cat /etc/fstab
+  829  vgdisplay /dev/mapper/vgAtem4-atem4vol
+  830  df -h
+  831  ps ax |grep mysql
+  832  lvdisplay
+  833  vgdisplay /dev/mapper/vgAtem4-atem4vol
+  834  vgdisplay vgAtem4-atem4vol
+  835  vgdisplay /dev/mapper/vgAtem4
+  836  ping ANAT0-PROD-STP-02
+  837  ssh 192.168.253.120
+  838  exit
+  839  df -h
+  840  pvdisplay
+  841  exut
+  842  exit
+  843  df -h
+  844  vgdisplay
+  845  exit
+  846  cd /usr/src/
+  847  ls
+  848  rpm -Uvh netapp_linux_unified_host_utilities-7-0.x86_64.rpm
+  849  ls
+  850  rpm -Uvh netapp.snapdrive.linux_x86_64_5_3P2.rpm
+  851  yum install sg3_utils*
+  852  cd /etc/
+  853  ls
+  854  cd /opt/
+  855  ls
+  856  cd NetApp/
+  857  ls
+  858  cd snapdrive/
+  859  ls
+  860  vim snapdrive
+  861  vim snapdrive?
+  862  vim snapdrive.conf
+  863  chmod 644 snapdrive.conf
+  864  vim snapdrive.conf
+  865  /etc/init.d/snapdrived stop
+  866  snapdrive config list
+  867  /etc/init.d/snapdrived start
+  868  snapdrive config list
+  869  ping ANAT0-vfiler01
+  870  mount
+  871  ifconfig
+  872  ping 192.168.29.1
+  873  vi /etc/hosts
+  874  ping ANAT0-vfiler01
+  875  mount
+  876  ls /home/exports/
+  877  ls -alih /home/exports/
+  878  mount
+  879  cd /home/
+  880  ls
+  881  mount ANAT0-PROD-STP-02:/vol/vol_dbexport1_nfs/dbexport2 /mnt/
+  882  cd /opt/
+  883  ls
+  884  cd NetApp/
+  885  ls
+  886  cd snapdrive/
+  887  ls
+  888  cp /mnt/.sdupw .
+  889  ls -alih
+  890  cp /mnt/.pwfile .
+  891  ls
+  892  history
+  893  snapdrive config list
+  894  snapdrive storage show -all
+  895  exit
+  896  snapdrive storage show -all
+  897  exit
+  898  cat /etc/fstab
+  899  df -h
+  900  cd /home/databases/atem4_dw/
+  901  ls
+  902  lsof mysql
+  903  cat /sys/class/scsi_host/host0/scan
+  904  ls -l /sys/class/scsi_host/host0/scan
+  905  cp /sys/class/scsi_host/host0/scan /root/
+  906  echo "- - -" > /sys/class/scsi_host/host0/scan
+  907  echo "- - -" > /sys/class/scsi_host/host1/scan
+  908  echo "- - -" > /sys/class/scsi_host/host2/scan
+  909  echo "- - -" > /sys/class/scsi_host/host3/scan
+  910  echo "- - -" > /sys/class/scsi_host/host4/scan
+  911  echo "- - -" > /sys/class/scsi_host/host5/scan
+  912  lspci
+  913  cat /etc/mtab
+  914  df -h
+  915  pvdisplay
+  916  vgdisplay
+  917  echo 1 > /sys/block/sdb/device/rescan
+  918  partprobe -v /dev/sdb
+  919  partprobe -v /dev/sdb1
+  920  man partx
+  921  man partprobre
+  922  man partprobe
+  923  man partx
+  924  vgdisplay
+  925  man partex
+  926  man partx
+  927  partx -l
+  928  partx -l /dev/sdb
+  929  df -h
+  930  partx -a /dev/sdb1
+  931  partx -a /dev/sdb
+  932  pvdisplay
+  933  vgdisplay
+  934  partprobe /dev/sdb
+  935  man partprobe
+  936  partprobe -s /dev/sdb
+  937  partprobe -s
+  938  man partprobe
+  939  partprobe -h
+  940  man partx
+  941  pvdisplay
+  942  dmesg
+  943  df -h
+  944  pvdisplay
+  945  fdisk -l
+  946  fdisk /dev/sdb
+  947  pvdisplay
+  948  cat /etc/fstab
+  949  fdisk /dev/sdb
+  950  pvscan
+  951  vgdisplay
+  952  pvdisplay
+  953  pvdisplay
+  954  fdisk /dev/sdb
+  955  cfdisk /dev/sdb2
+  956  cat /proc/partitions
+  957  partprobe /dev/sdb
+  958  cat /proc/partitions
+  959  fdisk -l |grep /dev/sdb
+  960  cfdisk /dev/sdb
+  961  pvcreate /dev/sdb2
+  962  cat /proc/partitions
+  963  cat /proc/partitions
+  964  fdisk -l /dev/sdb
+  965  pvcreate /dev/sdb5
+  966  fdisk /dev/sdb
+  967  cfdisk /dev/sdb
+  968  cat /proc/partitions
+  969  man partprobe
+  970  partprobe -s
+  971  man parted
+  972  parted -l
+  973  cfdisk /dev/sdb
+  974  fdisk -l
+  975  cfdisk /dev/sdb
+  976  pvdisplay
+  977  cat /proc/partitions
+  978  partprobe /dev/sdb
+  979  partprobe -v /dev/sdb
+  980  man partprobe
+  981  partx -l
+  982  partx -l /dev/sdb
+  983  partx -v -a /dev/sdb
+  984  ls /dev/sdb*
+  985  cat /proc/partitions
+  986  pvdisplay
+  987  pvcreate /dev/sdb2
+  988  vgextend vgAtem4 /dev/sdb2
+  989  lvdisplay
+  990  lvextend -L +300G atem4vol /dev/sdb2
+  991  lvextend -L +300G /dev/vgAtem4/atem4vol /dev/sdb2
+  992  resize2fs atem4vol
+  993  resize2fs /dev/vgAtem4/atem4vol
+  994  df -h
+  995  exit
+  996  df -h
+  997  history
+  998  snapdrive storage show -all
+  999  fdisk -l /dev/sdb
+ 1000  exit
+ 1001  history
+
+sanlun lun show all
+history | less
+ sanlun lun show all
+watch  sanlun lun show all
+history | less
+iscsiadm -m discovery -t sendtargets -p 192.168.29.1:3260
+sanlun lun show all
+iscsiadm -m session --rescan
+sanlun lun show all
+watch  sanlun lun show all
+iscsiadm -m session --rescan
+sanlun lun show all
+
+snapdrive storage create -dg vgMobistar10k -dgsize 4.5t -fs /home/databases/mobistar10k -filervol ANAT0-PROD-STP-01:/vol/vol_mobistar_10k -igroup ANAT1-MASTER-DB03 -vgsize 4.5t
+snapdrive storage create -dg vgMobistar10k –dgsize 300g –fs /home/databases/mobistar10k 
+snapdrive storage create -dg vgMobistar10k -fs /home/databases/mobistar10k
+snapdrive storage create -dg vgMobistar10k -fs /home/databases/mobistar10k ANAT0-PROD-STP-01:/vol/vol_mobistar_10k -igroup ANAT1-MASTER-DB03 -dgsize 5T
+snapdrive storage create -dg vgMobistar10k -fs /home/databases/mobistar10k -filervol ANAT0-PROD-STP-01:/vol/vol_mobistar_10k -igroup ANAT1-MASTER-DB03 -dgsize 5t
+snapdrive storage create -dg vgMobistar10k -fs /home/databases/mobistar10k -filervol ANAT0-PROD-STP-01:/vol/vol_mobistar_10k -igroup ANAT1-MASTER-DB03 -dgsize 3t
+snapdrive storage create -dg vgMobistar10k -fs /home/databases/mobistar10k -filervol ANAT0-PROD-STP-01:/vol/vol_mobistar_10k -igroup ANAT1-MASTER-DB03 -dgsize 2.5t
+snapdrive storage create -dg vgMobistar10k -fs /home/databases/mobistar10k -filervol ANAT0-PROD-STP-01:/vol/vol_mobistar_10k -igroup ANAT1-MASTER-DB03 -dgsize 2t
+snapdrive storage create -dg vgMobistar10k -dgsize 100g -fs /home/databases/mobistar10k -filervol ANAT0-PROD-STP-01:/vol/vol_mobistar_10k -igroup ANAT1-MASTER-DB03
+ANAT0-PROD-STP-01             /vol/vol_mobistar_10k/vgMobistar10k_SdLun /dev/sdg        host2      FCP        5t      7DOT
+ANAT0-PROD-STP-01             /vol/vol_mobistar_10k/vgMobistar10k_SdLun /dev/sdd        host1      FCP        5t      7DOT
+vmhba32:C1:T0:L0
+iqn.2010-01.com.solidfire:xway.gva0042-ebs40-ssd1.37:10.208.124.101:3260
+0
+Active (I/O)
+vmhba32:C1:T0:L0
+iqn.2010-01.com.solidfire:xway.gva0042-ebs40-ssd1.37:10.208.124.101:3260
+0
+Active (I/O)
+vmhba32:C0:T12:L0
+iqn.2010-01.com.solidfire:xway.gva0042-prot40-ssd3.49:10.208.124.103:3260
+0
+Active (I/O)
