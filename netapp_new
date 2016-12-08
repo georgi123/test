@@ -1,0 +1,30 @@
+194.160.56.96/27 via 10.170.172.254  should be 194.150.56.96/27 via 10.170.172.254
+
+The central mGEM in AMS connecting to 10.170.172.12 via 194.150.56.126 dev eth0  src 194.150.56.103
+Since the server is a DB and you have to restart the network service after the route change, I haven't fix it.
+
+ip route add 194.150.56.103 via 194.150.56.126 dev eth0
+
+snapdrive storage create  -lun ANAT0-PROD-STP-01:/vol/vol_mobistar_10k/vgMobistar10k_SdLun -lunsize 5t
+snapdrive storage delete -lun ANAT0-PROD-STP-01:/vol/vol_mobistar_10k/vgMobistar10k_SdLun
+snapdrive igroup list
+snapdrive storage create  -lun ANAT0-PROD-STP-01:/vol/vol_mobistar_10k/vgMobistar10k_SdLun -lunsize 5t -igroup ANAT1-MASTER-DB03
+snapdrive storage show -all
+multipath -ll
+rescan-scsi-bus.sh
+snapdrive storage create  -lun ANAT0-vfiler01:/vol/ANAT0_vol_mobistar3/vgMobistar-6_SdLun -lunsize 300g -igroup ANAT0-vfiler01
+snapdrive igroup list
+multipath -ll
+
+snapdrive storage create -dg vgMobistar  -fs /home/databases/mobistar -filervol ANAT0-vfiler01:/vol/vol_mobistar -igroup ANAT0-vfiler01  -lunsize 300g
+
+#slave_command
+snapdrive storage show -all
+iscsiadm -m session
+iscsiadm -m session --rescan
+iscsiadm -m session -P 3
+snapdrive storage create -dg vgMobistar -dgsize 300g -filervol ANAT0-vfiler01:/vol/ANAT0_vol_mobistar/ -igroup ANAT0-vfiler01
+snapdrive storage create  -lun ANAT0-vfiler01:/vol/ANAT0_vol_mobistar/vgMobistar-6_SdLun -lunsize 300g -igroup  ANAT1-SLAVE-DB03
+#netapp commands
+igoup
+lun
