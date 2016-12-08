@@ -1,0 +1,19 @@
+svcadm	Manage the state of service instances
+svcs	Provide information about services, including their status
+svcprop	Get information about service configuration properties
+svccfg	Import, export, and modify service configuration
+# svcadm disable svc:/application/management/snmpdx:default
+# svcs -xv svc:/application/management/snmpdx:default
+     svc:/application/management/snmpdx:default (Sun Solstice Enterprise Master Agent)
+   State: disabled since June  1, 2014 08:00:00 AM CEST
+  Reason: Disabled by an administrator.
+     See: http://sun.com/msg/SMF-8000-05
+     See: man -M /usr/share/man/ -s 1M snmpdx
+  Impact: This service is not running.
+# svcadm enable svc:/application/management/sma:default
+# svcs -xv svc:/application/management/sma:default
+     svc:/application/management/sma:default (net-snmp SNMP daemon)
+   State: online since June 1, 2014 08:00:00 AM CEST
+     See: man -M /usr/share/man/ -s 1M snmpd
+     See: /var/svc/log/application-management-sma:default.log
+  Impact: None.
