@@ -1,0 +1,16 @@
+snapdrive storage create  -lun ANAT0-vfiler01:/vol/ANAT0_vol_mobistar3/vgMobistar-6_SdLun -lunsize 300g -igroup ANAT0-vfiler01
+snapdrive storage create  -lun ANAT0-vfiler01:/vol/ANAT0_vol_mobistar3/vgMobistar-6_SdLun -lunsize 300g -igroup ANAT0-vfiler01
+snapdrive igroup list
+snapdrive storage create  -lun ANAT0-vfiler01:/vol/ANAT0_vol_mobistar/vgMobistar-7_SdLun -lunsize 300g -igroup ANAT0-vfiler01
+snapdrive storage create -dg vgMobistar -dgsize 300g -filervol ANAT0-vfiler01:/vol/ANAT0_vol_mobistar/ -igroup ANAT0-vfiler01
+snapdrive storage create  -lun ANAT0-vfiler01:/vol/ANAT0_vol_mobistar/vgMobistar-7_SdLun -lunsize 300g -igroup ANAT0-vfiler01
+lun show -g
+snapdrive storage create  -lun ANAT0-vfiler01:/vol/ANAT0_vol_mobistar/vgMobistar-7_SdLun -lunsize 300g -igroup  ANAT1-SLAVE-DB03
+sanlun lun show all
+sanlun lun show all
+watch  sanlun lun show all
+iscsiadm -m discovery -t sendtargets -p 192.168.29.1:3260
+iscsiadm -m session --rescan
+cat /proc/partitions
+iscsiadm -m discovery -t sendtargets -p 192.168.29.1:3260
+sanlun lun show all
