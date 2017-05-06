@@ -12,7 +12,7 @@ echo "- - -" > /sys/class/scsi_host/host3/scan
 echo "- - -" > /sys/class/scsi_host/host4/scan
 echo "- - -" > /sys/class/scsi_host/host5/scan
 echo 1 > /sys/block/sdb/device/rescan
-
+"pvresize --setphysicalvolumesize 14.31G /dev/sda2"
 partprobe -v /dev/sdb
 partx -v -a /dev/sdb
 pvcreate /dev/sdb3
