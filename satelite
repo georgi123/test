@@ -1,3 +1,5 @@
+subscription-manager --force register --org="INTEROUTE" --activationkey="RHEL7-x86_64-IRT" --baseurl https://inth8-vas-sat-1.vas.inth8/pulp/repos
+
 mv /etc/yum.repos.d/* /root/
 subscription-manager --force  register --org INTEROUTE --activationkey RHEL6-x86_64-IRT
 subscription-manager attach --auto
