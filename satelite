@@ -18,7 +18,7 @@ katello-package-upload
 
 
 
-
+subscription-manager --force  register --org INTEROUTE --activationkey RHEL6-x86_64-IRT 
 
 
 
