@@ -1,0 +1,46 @@
+I.	Compatibility
+1.	vCenter Server 5.1 U2 is compatible with 5.5 U2
+1.	ESXi 5.1 (200251) is compatible with ESXi 5.5 U2
+3.	Microsoft SQL Server 2008 R2 Standard 10.50.1617.0 (after RTM but before SP1) is not compatible with 5.5; it has to be upgraded to SP3 and after that upgrade to SQL Server 2012 SP1 https://www.youtube.com/watch?v=d2SE46xaKYE
+4.	NetApp Console according to the compatibility matrix of NetApp is compatible with 5.5;
+ 
+ 
+II.	MOP
+1. Create an Affinity rule so that the vCenter VM to be on dss01-l-esx19;
+1.	Enable the Shell Console on dss01-l-esx19;
+2.	Logon locally on dss01-l-esx19;
+3.	Take a snapshot of the vCenter server;
+4.	Apply the latest windows updates;
+5.	Stop vCenter "VMware VirtualCenter Server" service, "vCenter Single Sign On", "VMware vCenter Inventory Service", "VMware vSphere Update Manager", "VMware vSphere Web Client", "Virtual Storage Console for VMware vSphere Server" and SQL "SQL Server (MSSQLSERVER)" service;
+6.	Stop the SQL;
+7.	Backup all databases;
+9.	Uninstall Server SQL 2008;
+10.	Install SQL 2012 SP1;
+11.	Mount VMware vCenter Server 5.1 DVD and copy the files locally;
+12.	In the software installer directory double click the "autorun.exe" file at "C:\<installer location>";
+13.	Click on "vCenter Single Sign On";
+14.	Install > This setup will perform an upgrade > Yes;
+15.	Next > Next > Accept "EULA" > Next ;
+16.	Enter the password for the SSO > Next > Install > Finish > Restart > Yes;
+17.	Start again the installer after the reboot > "VMware vCenter Inventory Service";
+18.	Install > Yes > Next > Next > Accept "EULA" > Next > Install > Finish;
+19.	Click on "VMware vCenter Server" > Install > Yes > Next > Next > Accept "EULA" > Next > Next > Install > Finish;
+20.	"VMware vSphere Client" > Install > Yes > Next > Next > Accept "EULA" > Next > Install > Finish;
+21.	"VMware vSphere Web Client" > Install > Yes > Next > Next > Accept "EULA" > Next > Install > Finish;
+22.	"VMware vSphere Update Manager" > Install > Yes > OK > Next > Next > Accept "EULA" > Next > Enter the password for the vCenter Administrator > Next > Next > Next > Install > Finish > Yes;
+23.	After the reboot check all services;
+24.	Install the newest PoweCLI version;
+25.	NetApp Plugin check:
+https://localhost:8143/Register.html
+10.133.0.11
+443
+root
+26.	Delete the snapshot;
+27.	Disable shell on dss01-l-esx19;
+28.	Delete affinity rules for the vCenter Server;
+29.	Remove the ISO image;
+30.	Delete the ISO disk from the VM;
+ 
+ 
+Regards,
+Petar
